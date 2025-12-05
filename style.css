@@ -1,0 +1,201 @@
+
+body {
+  font-family: arial;
+  margin: 1em;
+  color: #000000;
+  font-size: 2em;
+}
+
+h1 {
+  color: #000000;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.8em;
+}
+
+h2 {
+  clear: both;
+}
+
+video {
+  clear: both;
+  display: block;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  height: 280px;
+  width: 100%;
+  height: auto;
+  border-radius: 25px;
+
+}
+
+section {
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+}
+
+.detectOnClick {
+  position: relative;
+  float: left;
+  width: 48%;
+  margin: 2% 1%;
+  cursor: pointer;
+}
+.videoView {
+  position: absolute;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  width: 90%;
+  max-width: 90%;
+  margin: 2% 1%;
+  cursor: pointer;
+  min-height: 500px;
+  
+}
+
+.videoView p{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color:inherit;
+  color: #000000;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  z-index: 2;
+  margin: 0;
+  font-size: 1.3em;
+  line-height: 1.3em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  align-self: center;
+}
+
+.canvas {
+  z-index: 1;
+  position: absolute;
+  pointer-events: none;
+}
+
+.output_canvas {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  border-radius: 25px
+}
+
+.output {
+  display: none;
+  width: 100%;
+  font-size: calc(8px + 1.2vw);
+}
+
+.buttons{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  align-self: flex-end;
+}
+
+
+
+.mdc-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 10px auto; 
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  font-weight: 600;
+  font-size: .8em;
+  border-radius: 10px;
+  border-color: #252525;
+  border-width: 5px;
+  margin: 5px;
+  margin-bottom: 20px;
+}
+
+.btn{
+  padding: 25px;
+  background-color: rgb(43, 43, 43);
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  font-size: 1.4em;
+  border-radius: 20px;
+  border-color: #6a6a6a;
+  border-width: 10px;
+  margin: 15px;
+  transition: background-color 2.5s ease, color 2.5s ease, transform 2.5s ease;
+  min-width: 9em;
+}
+
+.active {
+  background-color: #33bfea; 
+  color: white;
+  transform: scale(1.1);
+  transition: background-color 2.5s ease-in, color 2.5s ease-in, transform 2.5s ease-in;; 
+}
+
+.btn:not(.active) {
+  transition: scale 1s ease;
+  transition: background-color 1s linear, color 1s linear, transform 1s linear;; 
+}
+
+.btn.selected{
+  background-color: rgb(17, 255, 17) !important;
+  transform: scale(0.95) !important;
+}
+
+#selectionStatus{
+  background-color: #1aff00;
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 40px;
+  font-weight: 600;
+  transform: scale(0);
+  transition: transform 1s ease;
+  border-color: #3b3b3b !important;
+  border-width: 8px;
+  border-style:inset;
+}
+
+#webcam{
+  height: 0px;
+}
+
+@keyframes pageRipple {
+  0% {
+    box-shadow: inset 0 0 0 30px rgba(26, 255, 0, 0.3);
+  }
+}
+
+.ripple-background::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  pointer-events: none;
+  border-radius: 30px; /* Adjust this value to control the roundness */
+  overflow: hidden; 
+  animation: pageRipple 4s ease;
+}
+
+.large-buttons .btn {
+  font-size: 2em;
+  padding: 40px;
+  min-width: 12em;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+  <meta charset="UTF-8">
+  <link href="style.css" rel="stylesheet">
+  <title>Hand Gesture Recognisers</title>
+  <script src="script.js" type="module"></script>
+</head>
+<h1>Hand Gesture Recogniser</h1>
+
+  <div id="liveView" class="videoView">
+    <button id="webcamButton" class="mdc-button mdc-button--raised">
+      <span class="mdc-button__ripple"></span>
+      <span class="mdc-button__label">ENABLE WEBCAM</span>
+    </button>
+
+
+    <div style="position: relative;">
+        <video id="webcam" autoplay playsinline></video>
+        <canvas class="output_canvas" id="output_canvas" width="128" height="720" style="position: absolute; top: 0px;"></canvas>
+        
+        
+    </div>
+    <p id='gesture_output' class="output"></p>
+    <div id="selectionStatus">Button Selected</div>
+    <div class = "buttons">
+      <button class="btn" id="b1">Open Palm 🤚</button> 
+      <button class="btn" id="b2">Closed Fist ✊</button>
+      <button class="btn" id="b3">Pointing Up ☝️</button>
+      <button class="btn" id="b4">Thumb Up 👍</button>
+      <button class="btn" id="b5">Peace ✌️</button>  
+    </div>
+    <br>
+    <button id="toggleButton" class="mdc-button mdc-button--raised">
+      <span class="mdc-button__ripple"></span>
+      <span class="mdc-button__label">LARGE BUTTONS MODE</span>
+    </button>
+    <button id="touchModeButton" class="mdc-button mdc-button--raised">
+      <span class="mdc-button__ripple"></span>
+      <span class="mdc-button__label">ENABLE TOUCH SCREEN MODE</span>
+    </button>
+  </div>
+
+
+
+</section>
+</html>
