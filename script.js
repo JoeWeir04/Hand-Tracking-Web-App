@@ -64,11 +64,15 @@ function enableCam() {
     ? "DISABLE PREDICTIONS"
     : "ENABLE PREDICTIONS";
 
+  const spinner = document.getElementById("loadingSpinner");
+
   if (webcamRunning) {
+    spinner.style.display = "block";
     const constraints = { video: true };
     navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
       video.srcObject = stream;
       video.addEventListener("loadeddata",  () => {
+        spinner.style.display = "none";
         // Get the webcam's natural dimensions
         const naturalWidth = video.videoWidth;
         const naturalHeight = video.videoHeight;
@@ -93,6 +97,9 @@ function enableCam() {
         predictWebcam();
       });
     });
+  }
+  else{
+    spinner.style.display = "none";
   }
 }
 
